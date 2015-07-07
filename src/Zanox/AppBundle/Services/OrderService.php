@@ -130,7 +130,8 @@ class OrderService {
      * Get All orders for a specific merchant using his ID as a criteria  
      * @author Mohamed Ragab Dahab <eng.mohamed.dahab@gmail.com>
      * @access public
-     * @param int $id
+     * 
+     * @param int $id Merchant id 
      * 
      * @return array Merchant Orders
      *
