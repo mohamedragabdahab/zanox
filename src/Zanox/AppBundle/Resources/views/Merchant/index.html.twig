@@ -1,0 +1,15 @@
+<h1>Merchants Listing</h1>
+<table border="1">
+    <th>Merchant</th>
+    <th>Action</th>
+    <tbody>
+        {% for merchant in merchants %}
+            <tr>
+                <td>{{ merchant.name }}</td>
+                <td>
+                    <a href="{{ path('merchant-report', {id: merchant.id}) }}">View Report</a>
+                </td>
+            </tr> 
+        {% endfor %}
+    </tbody>
+</table>

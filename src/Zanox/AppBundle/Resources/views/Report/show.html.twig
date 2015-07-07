@@ -1,0 +1,24 @@
+<h1>[ {{ orders[0].getmerchant().getName() }} ] Transactions Report</h1>
+{% set targetCurrency = 'GBP' %}
+{% set decimal = true %}
+{% set symbol = true %}
+<table border="1">
+    <th>Original Amount</th>
+    <th>Amount in GBP (£)</th>
+    <th>transation Date</th>
+    <tbody>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order.getCurrency().getSymbol() ~ order.getAmount()}}</td>
+                <td>{{ order.getAmount() | currency_convert_format(targetCurrency, decimal, symbol, order.getCurrency().getCode()) }}</td>
+                <td>{{ order.getDate()|date('Y-m-d') }}</td>
+            </tr>
+        {% endfor %}
+    <tfoot>
+    <th>Original Amount</th>
+    <th>Amount in GBP (£)</th>
+    <th>transation Date</th>
+</tfoot>
+</tbody>
+</table>
+<a href="{{ path('merchant-list') }}">Back to merchants</a>

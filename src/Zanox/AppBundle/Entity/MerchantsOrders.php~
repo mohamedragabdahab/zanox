@@ -1,0 +1,53 @@
+<?php
+
+namespace Zanox\AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * MerchantsOrders
+ *
+ * @ORM\Table(name="merchants_orders")
+ * @ORM\Entity
+ */
+class MerchantsOrders
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="merchat_id", type="integer", nullable=false)
+     */
+    private $merchatId;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="order_date", type="date", nullable=true)
+     */
+    private $orderDate;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="order_amount", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $orderAmount;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="currency_code", type="string", length=10, nullable=true)
+     */
+    private $currencyCode;
+
+
+}

@@ -1,0 +1,11 @@
+services:
+    
+    #Order Service
+    zanox_app.orderService:
+        class: Zanox\AppBundle\Services\OrderService
+        arguments: [@doctrine.orm.entity_manager]
+    
+    #Merchant Service
+    zanox_app.merchantService:
+        class: Zanox\AppBundle\Services\MerchantService
+        arguments: [@doctrine.orm.entity_manager]
